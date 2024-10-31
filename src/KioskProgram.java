@@ -4,7 +4,7 @@ public class KioskProgram {
     private Integer menuNumber;
     private Integer amount;
     private Integer totalPrice;
-    private Integer[] foorpPrice ={1000,1500,1000,2000};
+    private Integer[] foodPrices ={1000,1500,1000,2000};
 
 
     Scanner sc = new Scanner(System.in);
@@ -17,7 +17,7 @@ public class KioskProgram {
             System.out.println("1) 김밥(1000) 2) 참치김밥(1500) 3) 충무김밥(1000) 4) 김밥(2000) ");
 
             menuNumber = sc.nextInt();
-            if(menuNumber<1 || menuNumber>4){
+            if(menuNumber < 1 || menuNumber > 4){
                 System.out.println("메뉴에 포함된 번호를 입력하여 주세요");
             }else{
                 break;
@@ -30,6 +30,7 @@ public class KioskProgram {
         System.out.println("[안내] 선택하신 메뉴의 수량을 입력하여 주세요.");
         System.out.println("(# 최대 주문 가능 수량 : 99)");
         amount = sc.nextInt();
+
         while(true){
             if(amount>100){
                 System.out.println(amount + "개는 입력할 수 없습니다");
@@ -41,7 +42,7 @@ public class KioskProgram {
 
     }
     public void cost(){
-        totalPrice = foorpPrice[menuNumber -1] * amount;
+        totalPrice = foodPrices[menuNumber - 1] * amount;
         //return totalPrice;
     }
     public void output_print( ){
